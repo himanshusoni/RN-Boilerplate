@@ -1,0 +1,3 @@
+rootProject.name = 'RN_Boilerplate'
+
+include ':app'
