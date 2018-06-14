@@ -1,9 +1,10 @@
-import { Navigation } from 'react-native-navigation';
+import { Navigation } from 'react-native-navigation'
 
-import { registerScreens } from './screens';
+import { registerScreens } from './screens'
+
 class App {
   init() {
-    registerScreens();
+    registerScreens()
 
     Navigation.setRoot({
       root: {
@@ -21,10 +22,10 @@ class App {
           },
         },
       },
-    });
+    })
   }
 }
 
 Navigation.events().registerAppLaunchedListener(() => {
-  new App().init();
+  new App().init()
 })
