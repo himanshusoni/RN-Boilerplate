@@ -1,19 +1,30 @@
 import { Navigation } from 'react-native-navigation';
 
 import { registerScreens } from './screens';
-
-export default class App {
+class App {
   init() {
     registerScreens();
 
-    Navigation.startSingleScreenApp({
-      screen: {
-        screen: 'example.pageOne',
+    Navigation.setRoot({
+      root: {
+        stack: {
+          children: [
+            {
+              component: {
+                name: 'example.pageOne',
+                passProps: { description: 'This is page one' },
+              },
+            },
+          ],
+          options: {
+            topBar: { title: { text: 'Welcome Screen' } },
+          },
+        },
       },
-      appStyle: {
-        orientation: 'portrait',
-        navBarHidden: true,
-      }
     });
   }
 }
+
+Navigation.events().registerAppLaunchedListener(() => {
+  new App().init();
+})
