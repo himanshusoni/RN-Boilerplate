@@ -7,7 +7,9 @@
     "test": "jest",
     "lint": "eslint app",
     "pretty": "prettier --config ./.prettierrc --write \"app/**/*.js\"",
-    "pretty-lint": "prettier-eslint --eslint-config-path .eslintrc --write \"app/**/*.js\""
+    "pretty-lint": "prettier-eslint --eslint-config-path .eslintrc --write \"app/**/*.js\"",
+    "flow": "flow",
+    "flow-stop": "flow stop"
   },
   "dependencies": {
     "react": "16.3.1",
@@ -17,6 +19,7 @@
   "devDependencies": {
     "babel-eslint": "^8.2.3",
     "babel-jest": "23.0.1",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-react-native": "4.0.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
@@ -24,6 +27,7 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
+    "flow-bin": "^0.67.0",
     "jest": "23.1.0",
     "prettier": "^1.13.5",
     "prettier-eslint": "^8.8.1",

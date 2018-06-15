@@ -9,6 +9,7 @@
   ],
   "rules": {
     "max-len": ["error", 100],
+    "flowtype/require-parameter-type": [2],
     "react/jsx-filename-extension": [
       1, { "extensions": [".js", ".jsx"] }
     ],
