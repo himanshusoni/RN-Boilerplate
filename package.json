@@ -9,14 +9,17 @@
     "pretty": "prettier --config ./.prettierrc --write \"app/**/*.js\"",
     "pretty-lint": "prettier-eslint --eslint-config-path .eslintrc --write \"app/**/*.js\"",
     "flow": "flow",
-    "flow-stop": "flow stop"
+    "flow-stop": "flow stop",
+    "storybook": "storybook start -p 7007"
   },
   "dependencies": {
     "react": "16.3.1",
+    "react-dom": "^16.4.1",
     "react-native": "0.55.4",
     "react-native-navigation": "^2.0.2350"
   },
   "devDependencies": {
+    "@storybook/react-native": "^3.4.7",
     "babel-eslint": "^8.2.3",
     "babel-jest": "23.0.1",
     "babel-preset-flow": "^6.23.0",
