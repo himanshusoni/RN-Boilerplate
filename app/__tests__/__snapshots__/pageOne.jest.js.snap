@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing WelcomeBanner component Renders correctly 1`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "borderWidth": 1,
+      "flex": 1,
+      "margin": 10,
+      "padding": 5,
+    }
+  }
+>
+  <Component
+    style={
+      Object {
+        "height": 40,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 16,
+          "fontWeight": "bold",
+          "justifyContent": "center",
+        }
+      }
+    >
+      Welcome React Native
+    </Text>
+  </Component>
+  <ScrollView
+    style={
+      Object {
+        "borderColor": "black",
+        "borderTopWidth": 1,
+        "marginTop": 5,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      key="0"
+      style={
+        Object {
+          "padding": 5,
+          "paddingLeft": 10,
+          "width": "100%",
+        }
+      }
+    >
+      - a
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      key="1"
+      style={
+        Object {
+          "padding": 5,
+          "paddingLeft": 10,
+          "width": "100%",
+        }
+      }
+    >
+      - b
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      key="2"
+      style={
+        Object {
+          "padding": 5,
+          "paddingLeft": 10,
+          "width": "100%",
+        }
+      }
+    >
+      - c
+    </Text>
+  </ScrollView>
+</Component>
+`;

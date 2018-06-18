@@ -2,7 +2,9 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  * @flow
+ * eslint-disable react/prefer-stateless-function
  */
+import type { Node } from 'react'
 
 import React, { Component } from 'react'
 import { Platform, StyleSheet, Text, View, ScrollView } from 'react-native'
@@ -12,8 +14,13 @@ const instructions = Platform.select({
   android: 'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu',
 })
 
-const features = ['wix/react-native-navigation', 'eslint', 'flow', 'jest', 'storybook']
-export const WelcomeBanner = () => (
+type WBProps = {
+  title: string,
+  features: Array<string>,
+}
+
+const appFeatures = ['wix/react-native-navigation', 'eslint', 'flow', 'jest', 'storybook']
+export const WelcomeBanner = ({ title, features }: WBProps): Node => (
   <View
     style={{
       flex: 1,
@@ -31,7 +38,7 @@ export const WelcomeBanner = () => (
           justifyContent: 'center',
         }}
       >
-        Welcome to RN_Boilerplate
+        {title}
       </Text>
     </View>
     <ScrollView
@@ -42,15 +49,16 @@ export const WelcomeBanner = () => (
         width: '100%',
       }}
     >
-      {features.map(title => (
+      {features.map((label: string, index: number) => (
         <Text
+          key={index}
           style={{
             padding: 5,
             paddingLeft: 10,
             width: '100%',
           }}
         >
-          {`- ${title}`}
+          {`- ${label}`}
         </Text>
       ))}
     </ScrollView>
@@ -58,14 +66,16 @@ export const WelcomeBanner = () => (
 )
 
 type Props = {}
+
+/* eslint-disable react/prefer-stateless-function */
 export default class App extends Component<Props> {
-  render() {
+  render(): Node {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <WelcomeBanner />
+        <WelcomeBanner title="Welcome to RN_Boilerplate" features={appFeatures} />
       </View>
     )
   }
