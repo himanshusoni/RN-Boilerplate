@@ -8,11 +8,14 @@ import type { Node } from 'react'
 
 import React, { Component } from 'react'
 import { Platform, StyleSheet, Text, View, ScrollView } from 'react-native'
+import { connect } from 'react-redux'
+import { settingsSelector } from './redux/reducers/settings.redux'
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu',
-})
+const VersionLabel = ({ version }) => (
+  <View style={{ width: '100%', alignItems: 'center' }}>
+    <Text style={{ margin: 5 }}>{`Version - ${version}`}</Text>
+  </View>
+)
 
 type WBProps = {
   title: string,
@@ -65,10 +68,15 @@ export const WelcomeBanner = ({ title, features }: WBProps): Node => (
   </View>
 )
 
+const instructions = Platform.select({
+  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
+  android: 'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu',
+})
+
 type Props = {}
 
 /* eslint-disable react/prefer-stateless-function */
-export default class App extends Component<Props> {
+class PageOne extends Component<Props> {
   render(): Node {
     return (
       <View style={styles.container}>
@@ -76,6 +84,7 @@ export default class App extends Component<Props> {
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <WelcomeBanner title="Welcome to RN_Boilerplate" features={appFeatures} />
+        <VersionLabel version={this.props.version} />
       </View>
     )
   }
@@ -99,3 +108,5 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 })
+
+export default connect(settingsSelector)(PageOne)
