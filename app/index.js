@@ -1,10 +1,13 @@
 import { Navigation } from 'react-native-navigation'
+import { Provider } from 'react-redux'
+
+import configureStore from './redux/configureStore'
 
 import { registerScreens } from './screens'
 
 class App {
-  init() {
-    registerScreens()
+  init(store) {
+    registerScreens(store, Provider)
 
     Navigation.setRoot({
       root: {
@@ -26,6 +29,12 @@ class App {
   }
 }
 
-Navigation.events().registerAppLaunchedListener(() => {
-  new App().init()
-})
+export let store = null
+const initRedux = () =>
+  configureStore((appStore) => {
+    console.log('store dehyradated', appStore && appStore.getState())
+    store = appStore
+    new App().init(store)
+  })
+
+Navigation.events().registerAppLaunchedListener(initRedux)

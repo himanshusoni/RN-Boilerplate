@@ -13,10 +13,17 @@
     "storybook": "storybook start -p 7007"
   },
   "dependencies": {
+    "ramda": "^0.25.0",
     "react": "16.3.1",
     "react-dom": "^16.4.1",
     "react-native": "0.55.4",
-    "react-native-navigation": "^2.0.2350"
+    "react-native-navigation": "^2.0.2358",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0",
+    "remote-redux-devtools": "^0.5.12",
+    "reselect": "^3.0.1"
   },
   "devDependencies": {
     "@storybook/react-native": "^3.4.7",
